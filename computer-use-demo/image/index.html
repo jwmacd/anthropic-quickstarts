@@ -29,15 +29,19 @@
     <body>
         <div class="container">
             <iframe
-                src="http://" + window.location.hostname + ":8501"
+                id="streamlit"
                 class="left"
                 allow="fullscreen"
             ></iframe>
             <iframe
-                src="http://" + window.location.hostname + ":6081/vnc.html?view_only=1&autoconnect=1&resize=scale"
+                id="vnc"
                 class="right"
                 allow="fullscreen"
             ></iframe>
+            <script>
+                document.getElementById('streamlit').src = 'http://' + window.location.hostname + ':8501';
+                document.getElementById('vnc').src = 'http://' + window.location.hostname + ':6081/vnc.html?view_only=1&autoconnect=1&resize=scale';
+            </script>
         </div>
     </body>
 </html>
